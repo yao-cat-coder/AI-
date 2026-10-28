@@ -3,6 +3,70 @@ import json
 import os
 from openai import OpenAI
 st.set_page_config(page_title = "任务管家", page_icon = "🤵", layout = "wide")
+st.markdown("""
+<style>
+[data-testid="stAppViewContainer"] {
+    background-color: #FDF8F5 !important;
+}
+[data-testid="stHeader"] {
+    background: rgba(0,0,0,0);
+}
+p, span, label, h1, h2, h3, h4, div {
+    color: #4A4A4A !important;
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+.stTextInput>div>div>input {
+    background-color: #FFFFFF !important;
+    color: #333333 !important;
+    border: 2px solid #EAEAEA !important;
+    border-radius: 12px !important;
+    padding: 10px 15px !important;
+    transition: all 0.3s ease;
+}
+.stTextInput>div>div>input:focus {
+    border-color: #FF8C61 !important;
+    box-shadow: 0 0 8px rgba(255, 140, 97, 0.2) !important;
+}
+.stButton>button {
+    background: #FF8C61 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 10px 24px !important;
+    font-weight: bold !important;
+    box-shadow: 0 4px 12px rgba(255, 140, 97, 0.3) !important;
+    transition: all 0.2s ease !important;
+}
+.stButton>button:hover {
+    background: #FF7A45 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 140, 97, 0.4) !important;
+}
+.task-card {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border-left: 6px solid #FF8C61;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.task-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333 !important;
+}
+.task-time {
+    font-size: 14px;
+    color: #999999 !important;
+    background: #FDF8F5;
+    padding: 4px 10px;
+    border-radius: 10px;
+}
+</style>
+""", unsafe_allow_html=True)
 st.title("欢迎来到智慧管家系统")
 st.write("请输入大白话，如“明天早上七点要上早八”")
 def save_tasks(task_name, task_time):
