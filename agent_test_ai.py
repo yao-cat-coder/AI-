@@ -6,49 +6,51 @@ st.set_page_config(page_title = "任务管家", page_icon = "🤵", layout = "wi
 st.markdown("""
 <style>
 [data-testid="stAppViewContainer"] {
-    background-color: #FDF8F5 !important;
+    background-color: #EFE7DC !important;
 }
 [data-testid="stHeader"] {
     background: rgba(0,0,0,0);
 }
 p, span, label, h1, h2, h3, h4, div {
-    color: #4A4A4A !important;
+    color: #3E3A36 !important;
     font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
 }
 .stTextInput>div>div>input {
     background-color: #FFFFFF !important;
-    color: #333333 !important;
-    border: 2px solid #EAEAEA !important;
+    color: #3E3A36 !important;
+    border: 2px solid #DCD3C6 !important;
     border-radius: 12px !important;
     padding: 10px 15px !important;
     transition: all 0.3s ease;
 }
 .stTextInput>div>div>input:focus {
-    border-color: #FF8C61 !important;
-    box-shadow: 0 0 8px rgba(255, 140, 97, 0.2) !important;
+    border-color: #D95A36 !important;
+    box-shadow: 0 0 8px rgba(217, 90, 54, 0.2) !important;
 }
+
+/* 4. 按钮美化：深邃赤陶色 */
 .stButton>button {
-    background: #FF8C61 !important;
+    background: #D95A36 !important;
     color: #FFFFFF !important;
     border: none !important;
     border-radius: 20px !important;
     padding: 10px 24px !important;
     font-weight: bold !important;
-    box-shadow: 0 4px 12px rgba(255, 140, 97, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(217, 90, 54, 0.3) !important;
     transition: all 0.2s ease !important;
 }
 .stButton>button:hover {
-    background: #FF7A45 !important;
+    background: #C44B28 !important;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(255, 140, 97, 0.4) !important;
+    box-shadow: 0 6px 16px rgba(217, 90, 54, 0.4) !important;
 }
 .task-card {
     background-color: #FFFFFF;
     border-radius: 15px;
     padding: 16px 20px;
     margin-bottom: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    border-left: 6px solid #FF8C61;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06); 
+    border-left: 6px solid #D95A36; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,14 +58,19 @@ p, span, label, h1, h2, h3, h4, div {
 .task-name {
     font-size: 16px;
     font-weight: bold;
-    color: #333333 !important;
+    color: #2B2825 !important;
 }
 .task-time {
     font-size: 14px;
-    color: #999999 !important;
-    background: #FDF8F5;
+    color: #7A7268 !important; 
+    background: #F7F3EE;
     padding: 4px 10px;
     border-radius: 10px;
+}
+.stAlert {
+    background-color: #FFFFFF !important;
+    border-radius: 12px !important;
+    border: 1px solid #DCD3C6 !important;
 }
 </style>
 """, unsafe_allow_html=True)
